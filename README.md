@@ -5,6 +5,33 @@
 - **スマートフォン**: ぱくぱくビデオ — Expo (React Native) アプリ（`mobile_app/`）。iOS/Android のビルド・配信は **EAS** で実施。
 - **デスクトップ**: Windows/macOS/Linux 用の Python アプリ（`app.py`）
 
+## 新PC移行（5分クイックセットアップ）
+
+```bash
+# 1) リポジトリをクローン
+git clone https://github.com/kameking-lab/pakupakuvideo.git
+
+# 2) モバイルアプリのディレクトリへ移動
+cd pakupakuvideo/mobile_app
+
+# 3) 依存関係をインストール（どちらか）
+npm ci
+# または
+npm install
+
+# 4) ローカル起動（確認）
+npm start
+```
+
+```bash
+# 5) EAS Build & TestFlight 提出
+# ⚠ 重要: 提出前に必ずバージョン番号を上げる（重複提出エラー防止）
+npm run version:bump
+
+eas build --platform ios --profile production
+eas submit --platform ios --profile production
+```
+
 ## 機能
 
 - URL入力から動画をダウンロードして保存
