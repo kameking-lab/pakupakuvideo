@@ -1,0 +1,73 @@
+{
+  "expo": {
+    "name": "ぱくぱくビデオ",
+    "slug": "pakupakuvideo",
+    "version": "1.1.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "3",
+      "bundleIdentifier": "com.kamekinglab.pakupakuvideo",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "ウェブサイト内のインタラクティブなコンテンツや、動画・音声機能を適切に機能させるために使用する場合があります。",
+        "NSMicrophoneUsageDescription": "ウェブサイト内のインタラクティブなコンテンツや、動画・音声機能を適切に機能させるために使用する場合があります。"
+      }
+    },
+    "android": {
+      "versionCode": 3,
+      "package": "com.kamekinglab.pakupakuvideo",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.READ_MEDIA_VISUAL_USER_SELECTED",
+        "android.permission.READ_MEDIA_IMAGES",
+        "android.permission.READ_MEDIA_VIDEO",
+        "android.permission.READ_MEDIA_AUDIO"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "plugins": [
+      "expo-build-properties",
+      [
+        "@config-plugins/ffmpeg-kit-react-native",
+        {
+          "package": "full"
+        }
+      ],
+      "./withFFmpegFix.js"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "07f74e85-29ba-4446-b50a-62b5cb10d75d"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/07f74e85-29ba-4446-b50a-62b5cb10d75d"
+    }
+  }
+}
