@@ -1,0 +1,23 @@
+---
+description: EAS ビルド・提出前にバージョン・ビルド番号を必ず上げる
+alwaysApply: true
+---
+
+# EAS ビルド時のバージョン・ビルド番号
+
+`eas build` の実行を提案する際、または App Store Connect / Play への提出を含むビルドを行う前に、**必ず**以下を実施する。
+
+## 必須手順
+
+1. **バージョン・ビルド番号のインクリメント**
+   - `mobile_app` で `npm run version:bump` を実行する（推奨）
+   - または手動で `app.json` を更新する:
+     - `expo.version`: パッチを +1（例: 1.1.0 → 1.1.1）
+     - `expo.ios.buildNumber`: +1（例: "2" → "3"）
+     - `expo.android.versionCode`: +1（例: 2 → 3）
+
+2. **ビルド・提出の提案時に**
+   - 「まず `cd mobile_app && npm run version:bump` を実行してください」と明示するか、
+   - 手順に「app.json の version / buildNumber / versionCode をインクリメント」を含める。
+
+同じ buildNumber / versionCode で再提出すると App Store Connect で「You've already submitted this build」となり、長時間のビルドが無駄になるため、二度と省略しない。
